@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CLOTHETICA — Find Your Perfect Look</title>
+<style>
+:root{--wine:#641b35;--wine2:#913b5a;--rose:#f5dfe6;--cream:#fffaf8;--ink:#241b1e;--muted:#786b70;--line:#eadde1}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:var(--cream);line-height:1.5}
+a{text-decoration:none;color:inherit}.container{width:min(1180px,92%);margin:auto}
+nav{position:sticky;top:0;z-index:5;background:#fffaf8e8;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.logo{font:700 26px Georgia;color:var(--wine);letter-spacing:.12em}
+.navlinks{display:flex;gap:28px;font-size:14px;color:#64565c}.navbtn,.primary{background:var(--wine);color:white;padding:12px 20px;border-radius:999px}
+.hero{padding:78px 0 95px}.heroGrid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.eyebrow,.kicker{color:var(--wine);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.eyebrow{margin-bottom:18px}h1{font:500 clamp(48px,6vw,78px)/.98 Georgia;letter-spacing:-.045em;margin-bottom:25px}h1 span,h2{color:var(--wine)}
+.hero p{font-size:18px;color:var(--muted);max-width:570px;margin-bottom:28px}.actions{display:flex;gap:12px;flex-wrap:wrap}
+.secondary{border:1px solid var(--line);background:#fff;color:var(--wine);padding:11px 19px;border-radius:999px}
+.note{font-size:12px!important;color:#9b8d92!important;margin-top:14px}
+.phoneWrap{min-height:570px;display:flex;align-items:center;justify-content:center;position:relative}.blob{position:absolute;width:440px;height:440px;border-radius:50%;background:linear-gradient(145deg,#f2d3dc,#fff0ed)}
+.phone{position:relative;width:280px;height:560px;background:#211b1e;border:8px solid #211b1e;border-radius:42px;padding:10px;box-shadow:0 25px 70px #4a1d2d22;transform:rotate(2deg)}
+.screen{height:100%;background:#fff;border-radius:31px;overflow:hidden;padding:18px 15px}.status{display:flex;justify-content:space-between;font-size:9px;color:#777;margin-bottom:16px}
+.appTop{display:flex;justify-content:space-between;align-items:center}.appLogo{font:700 16px Georgia;color:var(--wine);letter-spacing:.1em}.avatar{width:28px;height:28px;border-radius:50%;background:var(--rose)}
+.search{margin:16px 0;background:#f8f3f4;padding:11px;border-radius:12px;color:#9b8d92;font-size:11px}.appTitle{font:25px Georgia}.sub{font-size:10px;color:#94868c;margin:3px 0 14px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:9px}.card{background:#faf7f6;border-radius:13px;overflow:hidden}.img{height:145px;background:linear-gradient(145deg,#eee0df,#bd8b96)}.img:nth-child(2){background:linear-gradient(145deg,#e4d8d1,#9e7b78)}.img:nth-child(3){background:linear-gradient(145deg,#e0dce2,#917488)}.img:nth-child(4){background:linear-gradient(145deg,#f0dfd8,#c19b88)}.label{padding:8px;font-size:9px;font-weight:700}.price{padding:0 8px 9px;font-size:9px;color:#806a72}
+.badge{position:absolute;right:25px;top:110px;background:#fff;padding:12px 15px;border-radius:14px;box-shadow:0 15px 40px #3c192512;font-size:11px}.badge strong{display:block;color:var(--wine);font-size:14px}
+.section{padding:92px 0}.alt{background:#fff}.center{text-align:center}.kicker{margin-bottom:12px}h2{font:500 clamp(36px,4vw,54px) Georgia;letter-spacing:-.03em;margin-bottom:14px}.lead{color:var(--muted);max-width:680px;margin:0 auto 42px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{padding:30px;border:1px solid var(--line);border-radius:24px;background:var(--cream);text-align:left}.num{width:42px;height:42px;border-radius:50%;background:var(--rose);color:var(--wine);display:grid;place-items:center;font-weight:800;margin-bottom:22px}.step h3{font:24px Georgia;margin-bottom:8px}.step p{font-size:14px;color:var(--muted)}
+.occasionGrid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.occasion{height:150px;border-radius:22px;padding:18px;display:flex;align-items:flex-end;color:#fff;position:relative;overflow:hidden;background:linear-gradient(145deg,#f0dce0,#aa7280)}.occasion:nth-child(2){background:linear-gradient(145deg,#e5d8d1,#9b7d77)}.occasion:nth-child(3){background:linear-gradient(145deg,#e0dfe3,#858695)}.occasion:nth-child(4){background:linear-gradient(145deg,#ead3d8,#ae7588)}.occasion:nth-child(5){background:linear-gradient(145deg,#dbe3dd,#789183)}.occasion:nth-child(6){background:linear-gradient(145deg,#e9ddd1,#a38a70)}.occasion:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent,rgba(35,15,22,.55))}.occasion b{position:relative;z-index:1}
+.demo{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.demoCopy p{color:var(--muted);margin-bottom:25px}.demoList{display:grid;gap:13px}.demoItem{display:flex;gap:12px;font-size:14px}.check{color:var(--wine);font-weight:900}
+.look{display:grid;grid-template-columns:1fr 1fr;gap:14px}.lookCard{height:320px;border-radius:27px;position:relative;overflow:hidden;background:linear-gradient(145deg,#ead8d7,#b88691)}.lookCard:nth-child(2){background:linear-gradient(145deg,#ded9d4,#9c8279)}.lookCard:nth-child(3){background:linear-gradient(145deg,#eee0d9,#c69d8c)}.lookCard:nth-child(4){background:linear-gradient(145deg,#e4d6de,#9a7187)}.lookText{position:absolute;bottom:0;left:0;right:0;padding:18px;color:white;background:linear-gradient(transparent,#28141acc)}
+.wardrobe{background:var(--wine);color:#fff}.wardrobe .kicker{color:#f2cbd7}.wardrobe .lead{color:#e8d7dd}.wardrobe h2{color:#fff}.wardrobeBox{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.stack{height:380px;position:relative}.stackCard{position:absolute;left:50%;top:25px;width:235px;height:305px;border-radius:25px;background:linear-gradient(145deg,#f2dfe1,#b78490);box-shadow:0 20px 45px #0004}.stackCard:nth-child(1){transform:translateX(-50%) rotate(-8deg)}.stackCard:nth-child(2){transform:translateX(-50%) rotate(5deg);background:linear-gradient(145deg,#eee1d7,#a88c7b);top:16px}.stackCard:nth-child(3){transform:translateX(-50%) rotate(-1deg);background:linear-gradient(145deg,#e3dbe3,#91758f);top:8px}.stackLabel{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);background:#fff;color:var(--wine);padding:10px 17px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.cta{padding:100px 0;text-align:center}.ctaBox{background:linear-gradient(135deg,#f3dce3,#fff);border:1px solid var(--line);border-radius:34px;padding:65px 20px}.cta h2{color:var(--wine)}
+footer{padding:28px 0;border-top:1px solid var(--line);color:#8a7d82;font-size:12px}.footer{display:flex;justify-content:space-between}
+@media(max-width:900px){.heroGrid,.demo,.wardrobeBox{grid-template-columns:1fr}.occasionGrid{grid-template-columns:repeat(3,1fr)}.phoneWrap{min-height:590px}}
+@media(max-width:600px){.navlinks{display:none}.hero{padding-top:48px}.steps{grid-template-columns:1fr}.occasionGrid{grid-template-columns:repeat(2,1fr)}.lookCard{height:250px}.footer{flex-direction:column;gap:8px}}
+</style>
+</head>
+<body>
+<nav><div class="container nav"><a class="logo" href="#">CLOTHETICA</a><div class="navlinks"><a href="#how">How it works</a><a href="#occasions">Occasions</a><a href="#wardrobe">Wardrobe</a></div><a class="navbtn" href="#demo">Explore demo</a></div></nav>
+
+<section class="hero"><div class="container heroGrid"><div>
+<div class="eyebrow">Fashion, simplified</div><h1>What should I <span>wear?</span><br>We have a look.</h1>
+<p>CLOTHETICA helps you discover complete, wearable looks for the moments that matter — without endless scrolling and outfit confusion.</p>
+<div class="actions"><a class="primary" href="#how">See how it works</a><a class="secondary" href="#occasions">Explore occasions</a></div>
+<p class="note">Demo concept • CLOTHETICA is coming soon</p></div>
+<div class="phoneWrap"><div class="blob"></div><div class="phone"><div class="screen"><div class="status"><span>9:41</span><span>● ● ●</span></div><div class="appTop"><div class="appLogo">CLOTHETICA</div><div class="avatar"></div></div><div class="search">⌕ &nbsp; Search “date outfit”</div><div class="appTitle">Find your look</div><div class="sub">Curated outfits for your occasion</div><div class="cards">
+<div class="card"><div class="img"></div><div class="label">Date Night</div><div class="price">Complete look</div></div>
+<div class="card"><div class="img"></div><div class="label">College</div><div class="price">Complete look</div></div>
+<div class="card"><div class="img"></div><div class="label">Travel</div><div class="price">Complete look</div></div>
+<div class="card"><div class="img"></div><div class="label">Wedding</div><div class="price">Complete look</div></div>
+</div></div></div><div class="badge"><strong>One look.</strong> Everything styled.</div></div></div></section>
+
+<section class="section alt" id="how"><div class="container center"><div class="kicker">The CLOTHETICA idea</div><h2>From “nothing to wear” to “this is it.”</h2><p class="lead">Instead of making you assemble an outfit piece by piece, CLOTHETICA focuses on complete looks that already make sense together.</p>
+<div class="steps"><div class="step"><div class="num">01</div><h3>Tell us the moment</h3><p>Choose what you're dressing for — a date, college, travel, work, wedding and more.</p></div><div class="step"><div class="num">02</div><h3>Discover complete looks</h3><p>Browse coordinated outfit ideas rather than hunting for individual pieces.</p></div><div class="step"><div class="num">03</div><h3>Make it yours</h3><p>Save the looks you love and build a wardrobe of complete outfit ideas.</p></div></div></div></section>
+
+<section class="section" id="occasions"><div class="container"><div class="center"><div class="kicker">One app, many moments</div><h2>Dress for the occasion.</h2><p class="lead">CLOTHETICA is designed around the real question behind fashion discovery: “Where am I going?”</p></div>
+<div class="occasionGrid"><div class="occasion"><b>Date Night</b></div><div class="occasion"><b>College</b></div><div class="occasion"><b>Office</b></div><div class="occasion"><b>Wedding</b></div><div class="occasion"><b>Travel</b></div><div class="occasion"><b>Weekend</b></div></div></div></section>
+
+<section class="section alt" id="demo"><div class="container demo"><div class="demoCopy"><div class="kicker">A different way to shop</div><h2>Don't build the outfit. Discover the look.</h2><p>Imagine searching “romantic date outfit” and getting a cohesive look you can actually picture yourself wearing.</p><div class="demoList"><div class="demoItem"><span class="check">✓</span><span>Complete outfit inspiration in one place</span></div><div class="demoItem"><span class="check">✓</span><span>Occasion-first discovery</span></div><div class="demoItem"><span class="check">✓</span><span>Save complete looks to your wardrobe</span></div><div class="demoItem"><span class="check">✓</span><span>Designed to reduce outfit decision fatigue</span></div></div></div>
+<div class="look"><div class="lookCard"><div class="lookText"><b>Romantic Date</b><br><small>Soft • elegant • effortless</small></div></div><div class="lookCard"><div class="lookText"><b>Everyday College</b><br><small>Comfortable • fresh • easy</small></div></div><div class="lookCard"><div class="lookText"><b>Summer Travel</b><br><small>Light • practical • stylish</small></div></div><div class="lookCard"><div class="lookText"><b>Wedding Guest</b><br><small>Elegant • festive • polished</small></div></div></div></div></section>
+
+<section class="section wardrobe" id="wardrobe"><div class="container wardrobeBox"><div class="stack"><div class="stackCard"></div><div class="stackCard"></div><div class="stackCard"></div><div class="stackLabel">My complete looks</div></div><div><div class="kicker">Your wardrobe, reimagined</div><h2>Save looks. Not just clothes.</h2><p class="lead">Your CLOTHETICA wardrobe can hold multiple complete looks. Each saved look stays together as one outfit idea, so you don't lose the styling that made you love it.</p><a class="secondary" href="#demo">Explore the concept</a></div></div></section>
+
+<section class="cta"><div class="container"><div class="ctaBox"><div class="kicker">CLOTHETICA</div><h2>Find your perfect look.</h2><p class="lead">A smarter, simpler way to discover what to wear.</p><a class="primary" href="#">COMING SOON</a></div></div></section>
+<footer><div class="container footer"><span>© 2026 CLOTHETICA</span><span>Fashion discovery, reimagined.</span></div></footer>
+</body></html>
